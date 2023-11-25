@@ -1,12 +1,78 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
 
-buildscript {
-    dependencies {
-    classpath 'com.google.gms:google-services:4.3.15'
+android {
+    namespace 'com.mishraaniket.project'
+    compileSdk 33
+
+    buildFeatures{
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "com.mishraaniket.project"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
-plugins {
-    id 'com.android.application' version '7.3.1' apply false
-    id 'com.android.library' version '7.3.1' apply false
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation platform('com.google.firebase:firebase-bom:32.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.firebase:firebase-messaging'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.hbb20:ccp:2.7.1'                                                    //country code picker
+
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'                 //otp activity
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'                                     //circular image view
+
+    implementation 'com.github.3llomi:CircularStatusView:V1.0.3'                            //status view
+
+    implementation 'com.github.OMARIHAMZA:StoryView:1.0.2-alpha'                            //story view
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'                                     //shimmer view
+
+    implementation 'com.todkars:shimmer-recyclerview:0.4.1'                                 //shimmer recycler view
+
+    implementation 'com.github.bumptech.glide:glide:4.15.1'                                 //Glide: loading image
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    implementation "com.github.pgreze:android-reactions:1.6"                                //Reactions
+
+    implementation 'com.android.volley:volley:1.2.1'                                        //volley library
+
+    implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+'                //Zegocloud video calling
+    implementation 'com.github.ZEGOCLOUD:zego_uikit_signaling_plugin_android:+'                //Zegocloud video calling. Too important
+
 }
