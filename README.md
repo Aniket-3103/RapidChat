@@ -19,6 +19,7 @@ RapidChat is a feature-rich chat application designed to transform the way we co
 
 - Firebase: For seamless data storage
 - Volley: For efficient notification handling
+- ZegoCloud API: For video calling
 
 ## Installation
 
